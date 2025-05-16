@@ -79,11 +79,6 @@ location_table: dict[str, UT99Location] = {
         address=BASE_ID + 27,
         ladder="DM",
     ),
-    "DM-Barricade": UT99Location(
-        name="DM-Barricade",
-        address=BASE_ID + 28,
-        ladder="DM",
-    ),
     "DM-Shrapnel][": UT99Location(
         name="DM-Shrapnel][",
         address=BASE_ID + 29,

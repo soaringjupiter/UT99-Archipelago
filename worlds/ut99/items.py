@@ -83,11 +83,6 @@ item_table: dict[str, UT99Item] = {
         code=BASE_ID + 26,
         classification=ItemClassification.progression,
     ),
-    "DM-Barricade": UT99Item(
-        name="DM-Barricade",
-        code=BASE_ID + 27,
-        classification=ItemClassification.progression,
-    ),
     "DM-Shrapnel][": UT99Item(
         name="DM-Shrapnel][",
         code=BASE_ID + 28,
