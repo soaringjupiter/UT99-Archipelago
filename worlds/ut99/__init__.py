@@ -85,8 +85,7 @@ class UT99World(World):
             [
                 item
                 for item in item_table.values()
-                if item.placeable
-                and item.name != self.last_map
+                if item.placeable and item.name != self.last_map
                 # and item.name == "DM-Oblivion"  # for testing
             ],
         )
@@ -113,20 +112,24 @@ class UT99World(World):
                 1,
             )
 
-        beaten_locations = [
-            mw.get_location(loc.name, player) for loc in location_table.values()
-        ]
-
-        mw.completion_condition[player] = lambda state, targets=beaten_locations: all(
-            loc in state.locations_checked for loc in targets
-        )
-
         all_unlocks = [n for n, d in item_table.items() if d.placeable]
         gc_location = mw.get_location(self.last_map, player)
         old_rule = gc_location.access_rule
         gc_location.access_rule = lambda state, p=player, base=old_rule, reqs=tuple(
             all_unlocks,
         ): (base(state) and state.has_all(reqs, p))
+
+        # beaten_locations = [
+        #     mw.get_location(loc.name, player) for loc in location_table.values()
+        # ]
+
+        # mw.completion_condition[player] = lambda state, targets=beaten_locations: all(
+        #     loc in state.locations_checked for loc in targets
+        # )
+
+        mw.completion_condition[player] = lambda state, p=player: state.has(
+            "Game Complete", p
+        )
 
     def get_filler_item_name(self):
         return "Nothing"
