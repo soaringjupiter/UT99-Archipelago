@@ -1,198 +1,261 @@
-class UT99Location:
-    map: str
-    id: int
+from BaseClasses import Location
+
+
+class UT99Location(Location):
+    __slots__ = ("name", "id", "ladder")
+
+    def __init__(
+        self,
+        name: str,
+        address: int,
+        ladder: str,
+        player: int = 1,
+    ):
+        # Use the base Location constructor
+        super().__init__(
+            player=player,
+            name=name,
+            address=address,
+        )
+        self.ladder = ladder
 
 
 BASE_ID = 19992000
 
 location_table: dict[str, UT99Location] = {
-    # Deathmatch Maps - Beaten
-    "Oblivion": UT99Location(
-        map="DM-Oblivion - Beaten",
-        id=BASE_ID + 17,
+    # Deathmatch names - Beaten
+    "DM-Oblivion": UT99Location(
+        name="DM-Oblivion",
+        address=BASE_ID + 17,
+        ladder="DM",
     ),
-    "Stalwart": UT99Location(
-        map="DM-Stalwart - Beaten",
-        id=BASE_ID + 18,
+    "DM-Stalwart": UT99Location(
+        name="DM-Stalwart",
+        address=BASE_ID + 18,
+        ladder="DM",
     ),
-    "Fractal": UT99Location(
-        map="DM-Fractal - Beaten",
-        id=BASE_ID + 19,
+    "DM-Fractal": UT99Location(
+        name="DM-Fractal",
+        address=BASE_ID + 19,
+        ladder="DM",
     ),
-    "Turbine": UT99Location(
-        map="DM-Turbine - Beaten",
-        id=BASE_ID + 20,
+    "DM-Turbine": UT99Location(
+        name="DM-Turbine",
+        address=BASE_ID + 20,
+        ladder="DM",
     ),
-    "Codex": UT99Location(
-        map="DM-Codex - Beaten",
-        id=BASE_ID + 21,
+    "DM-Codex": UT99Location(
+        name="DM-Codex",
+        address=BASE_ID + 21,
+        ladder="DM",
     ),
-    "Pressure": UT99Location(
-        map="DM-Pressure - Beaten",
-        id=BASE_ID + 22,
+    "DM-Pressure": UT99Location(
+        name="DM-Pressure",
+        address=BASE_ID + 22,
+        ladder="DM",
     ),
-    "Arcane": UT99Location(
-        map="DM-ArcaneTemple - Beaten",
-        id=BASE_ID + 23,
+    "DM-ArcaneTemple": UT99Location(
+        name="DM-ArcaneTemple",
+        address=BASE_ID + 23,
+        ladder="DM",
     ),
-    "Grinder": UT99Location(
-        map="DM-Grinder - Beaten",
-        id=BASE_ID + 24,
+    "DM-Grinder": UT99Location(
+        name="DM-Grinder",
+        address=BASE_ID + 24,
+        ladder="DM",
     ),
-    "Malevolence": UT99Location(
-        map="DM-Malevolence - Beaten",
-        id=BASE_ID + 25,
+    "DM-Malevolence": UT99Location(
+        name="DM-Malevolence",
+        address=BASE_ID + 25,
+        ladder="DM",
     ),
-    "Galleon": UT99Location(
-        map="DM-KGalleon - Beaten",
-        id=BASE_ID + 26,
+    "DM-KGalleon": UT99Location(
+        name="DM-KGalleon",
+        address=BASE_ID + 26,
+        ladder="DM",
     ),
-    "Tempest": UT99Location(
-        map="DM-Tempest - Beaten",
-        id=BASE_ID + 27,
+    "DM-Tempest": UT99Location(
+        name="DM-Tempest",
+        address=BASE_ID + 27,
+        ladder="DM",
     ),
-    "Barricade": UT99Location(
-        map="DM-Barricade - Beaten",
-        id=BASE_ID + 28,
+    "DM-Barricade": UT99Location(
+        name="DM-Barricade",
+        address=BASE_ID + 28,
+        ladder="DM",
     ),
-    "Shrapnel": UT99Location(
-        map="DM-Shrapnel][ - Beaten",
-        id=BASE_ID + 29,
+    "DM-Shrapnel][": UT99Location(
+        name="DM-Shrapnel][",
+        address=BASE_ID + 29,
+        ladder="DM",
     ),
-    "Liandri": UT99Location(
-        map="DM-Liandri - Beaten",
-        id=BASE_ID + 30,
+    "DM-Liandri": UT99Location(
+        name="DM-Liandri",
+        address=BASE_ID + 30,
+        ladder="DM",
     ),
-    "Conveyor": UT99Location(
-        map="DM-Conveyor - Beaten",
-        id=BASE_ID + 31,
+    "DM-Conveyor": UT99Location(
+        name="DM-Conveyor",
+        address=BASE_ID + 31,
+        ladder="DM",
     ),
-    "Peak": UT99Location(
-        map="DM-Peak - Beaten",
-        id=BASE_ID + 32,
+    "DM-Peak": UT99Location(
+        name="DM-Peak",
+        address=BASE_ID + 32,
+        ladder="DM",
     ),
-    # Domination Maps - Beaten
-    "Condemned": UT99Location(
-        map="DOM-Condemned - Beaten",
-        id=BASE_ID + 33,
+    # Domination names - Beaten
+    "DOM-Condemned": UT99Location(
+        name="DOM-Condemned",
+        address=BASE_ID + 33,
+        ladder="DOM",
     ),
-    "Ghardhen": UT99Location(
-        map="DOM-Ghardhen - Beaten",
-        id=BASE_ID + 34,
+    "DOM-Ghardhen": UT99Location(
+        name="DOM-Ghardhen",
+        address=BASE_ID + 34,
+        ladder="DOM",
     ),
-    "Cryptic": UT99Location(
-        map="DOM-Cryptic - Beaten",
-        id=BASE_ID + 35,
+    "DOM-Cryptic": UT99Location(
+        name="DOM-Cryptic",
+        address=BASE_ID + 35,
+        ladder="DOM",
     ),
-    "Cinder": UT99Location(
-        map="DOM-Cinder - Beaten",
-        id=BASE_ID + 36,
+    "DOM-Cinder": UT99Location(
+        name="DOM-Cinder",
+        address=BASE_ID + 36,
+        ladder="DOM",
     ),
-    "Gearbolt": UT99Location(
-        map="DOM-Gearbolt - Beaten",
-        id=BASE_ID + 37,
+    "DOM-Gearbolt": UT99Location(
+        name="DOM-Gearbolt",
+        address=BASE_ID + 37,
+        ladder="DOM",
     ),
-    "Leadworks": UT99Location(
-        map="DOM-Leadworks - Beaten",
-        id=BASE_ID + 38,
+    "DOM-Leadworks": UT99Location(
+        name="DOM-Leadworks",
+        address=BASE_ID + 38,
+        ladder="DOM",
     ),
-    "Olden": UT99Location(
-        map="DOM-Olden - Beaten",
-        id=BASE_ID + 39,
+    "DOM-Olden": UT99Location(
+        name="DOM-Olden",
+        address=BASE_ID + 39,
+        ladder="DOM",
     ),
-    "Sesmar": UT99Location(
-        map="DOM-Sesmar - Beaten",
-        id=BASE_ID + 40,
+    "DOM-Sesmar": UT99Location(
+        name="DOM-Sesmar",
+        address=BASE_ID + 40,
+        ladder="DOM",
     ),
-    "MetalDream": UT99Location(
-        map="DOM-MetalDream - Beaten",
-        id=BASE_ID + 41,
+    "DOM-MetalDream": UT99Location(
+        name="DOM-MetalDream",
+        address=BASE_ID + 41,
+        ladder="DOM",
     ),
-    # Capture the Flag Maps - Beaten
-    "Niven": UT99Location(
-        map="CTF-Niven - Beaten",
-        id=BASE_ID + 42,
+    # Capture the Flag names - Beaten
+    "CTF-Niven": UT99Location(
+        name="CTF-Niven",
+        address=BASE_ID + 42,
+        ladder="CTF",
     ),
-    "Facing Worlds": UT99Location(
-        map="CTF-Face - Beaten",
-        id=BASE_ID + 43,
+    "CTF-Face": UT99Location(
+        name="CTF-Face",
+        address=BASE_ID + 43,
+        ladder="CTF",
     ),
-    "Eternal Cave": UT99Location(
-        map="CTF-EternalCave - Beaten",
-        id=BASE_ID + 44,
+    "CTF-EternalCave": UT99Location(
+        name="CTF-EternalCave",
+        address=BASE_ID + 44,
+        ladder="CTF",
     ),
-    "Coret": UT99Location(
-        map="CTF-Coret - Beaten",
-        id=BASE_ID + 45,
+    "CTF-Coret": UT99Location(
+        name="CTF-Coret",
+        address=BASE_ID + 45,
+        ladder="CTF",
     ),
-    "The Gauntlet": UT99Location(
-        map="CTF-Gauntlet - Beaten",
-        id=BASE_ID + 46,
+    "CTF-Gauntlet": UT99Location(
+        name="CTF-Gauntlet",
+        address=BASE_ID + 46,
+        ladder="CTF",
     ),
-    "Dreary": UT99Location(
-        map="CTF-Dreary - Beaten",
-        id=BASE_ID + 47,
+    "CTF-Dreary": UT99Location(
+        name="CTF-Dreary",
+        address=BASE_ID + 47,
+        ladder="CTF",
     ),
-    "Last Command": UT99Location(
-        map="CTF-Command - Beaten",
-        id=BASE_ID + 48,
+    "CTF-Command": UT99Location(
+        name="CTF-Command",
+        address=BASE_ID + 48,
+        ladder="CTF",
     ),
-    "The Lava Giant": UT99Location(
-        map="CTF-LavaGiant - Beaten",
-        id=BASE_ID + 49,
+    "CTF-LavaGiant": UT99Location(
+        name="CTF-LavaGiant",
+        address=BASE_ID + 49,
+        ladder="CTF",
     ),
-    "November Sub Pen": UT99Location(
-        map="CTF-November - Beaten",
-        id=BASE_ID + 50,
+    "CTF-November": UT99Location(
+        name="CTF-November",
+        address=BASE_ID + 50,
+        ladder="CTF",
     ),
-    "Hydro": UT99Location(
-        map="CTF-Hydro16 - Beaten",
-        id=BASE_ID + 51,
+    "CTF-Hydro16": UT99Location(
+        name="CTF-Hydro16",
+        address=BASE_ID + 51,
+        ladder="CTF",
     ),
-    "Orbital": UT99Location(
-        map="CTF-Orbital - Beaten",
-        id=BASE_ID + 52,
+    "CTF-Orbital": UT99Location(
+        name="CTF-Orbital",
+        address=BASE_ID + 52,
+        ladder="CTF",
     ),
-    # Assault Maps - Beaten
-    "Frigate": UT99Location(
-        map="AS-Frigate - Beaten",
-        id=BASE_ID + 53,
+    # Assault names - Beaten
+    "AS-Frigate": UT99Location(
+        name="AS-Frigate",
+        address=BASE_ID + 53,
+        ladder="AS",
     ),
-    "High Speed": UT99Location(
-        map="AS-HiSpeed - Beaten",
-        id=BASE_ID + 54,
+    "AS-HiSpeed": UT99Location(
+        name="AS-HiSpeed",
+        address=BASE_ID + 54,
+        ladder="AS",
     ),
-    "Rook": UT99Location(
-        map="AS-Rook - Beaten",
-        id=BASE_ID + 55,
+    "AS-Rook": UT99Location(
+        name="AS-Rook",
+        address=BASE_ID + 55,
+        ladder="AS",
     ),
-    "Mazon": UT99Location(
-        map="AS-Mazon - Beaten",
-        id=BASE_ID + 56,
+    "AS-Mazon": UT99Location(
+        name="AS-Mazon",
+        address=BASE_ID + 56,
+        ladder="AS",
     ),
-    "Ocean Floor": UT99Location(
-        map="AS-OceanFloor - Beaten",
-        id=BASE_ID + 57,
+    "AS-OceanFloor": UT99Location(
+        name="AS-OceanFloor",
+        address=BASE_ID + 57,
+        ladder="AS",
     ),
-    "Overlord": UT99Location(
-        map="AS-Overlord - Beaten",
-        id=BASE_ID + 58,
+    "AS-Overlord": UT99Location(
+        name="AS-Overlord",
+        address=BASE_ID + 58,
+        ladder="AS",
     ),
-    # Challenge Maps - Beaten
-    "Phobos": UT99Location(
-        map="DM-Phobos - Beaten",
-        id=BASE_ID + 59,
+    # Challenge names - Beaten
+    "DM-Phobos": UT99Location(
+        name="DM-Phobos",
+        address=BASE_ID + 59,
+        ladder="Chal",
     ),
-    "Morpheus": UT99Location(
-        map="DM-Morpheus - Beaten",
-        id=BASE_ID + 60,
+    "DM-Morpheus": UT99Location(
+        name="DM-Morpheus",
+        address=BASE_ID + 60,
+        ladder="Chal",
     ),
-    "Zeto": UT99Location(
-        map="DM-Zeto - Beaten",
-        id=BASE_ID + 61,
+    "DM-Zeto": UT99Location(
+        name="DM-Zeto",
+        address=BASE_ID + 61,
+        ladder="Chal",
     ),
-    "HyperBlast": UT99Location(
-        map="DM-Hyperblast - Beaten",
-        id=BASE_ID + 62,
+    "DM-HyperBlast": UT99Location(
+        name="DM-HyperBlast",
+        address=BASE_ID + 62,
+        ladder="Chal",
     ),
 }
