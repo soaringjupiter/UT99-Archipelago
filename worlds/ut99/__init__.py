@@ -87,7 +87,7 @@ class UT99World(World):
                 for item in item_table.values()
                 if item.placeable
                 and item.name != self.last_map
-                and item.name == "DM-Oblivion"  # for testing
+                # and item.name == "DM-Oblivion"  # for testing
             ],
         )
         self.multiworld.push_precollected(self.create_item(random_map.name))
